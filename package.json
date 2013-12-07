@@ -28,7 +28,8 @@
     "grunt-karma": "~0.6.2",
     "grunt-tslint": "~0.3.2",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-sass": "~0.5.1",
-    "grunt-ts": "~1.5.0"
+    "grunt-ts": "~1.5.0",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-sass": "~0.5.1"
   }
 }

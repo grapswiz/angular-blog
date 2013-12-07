@@ -1,2 +1,8 @@
 .idea
 node_modules
+tscommand.tmp.txt
+
+// generated
+src/main/webapp/css
+src/main/webapp/images
+src/main/webapp/scripts
