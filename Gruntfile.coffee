@@ -8,6 +8,7 @@ module.exports = (grunt) ->
       tsTest: 'src/test/typescript'
       tsTestLib: '<%= opt.tsTest %>/lib'
       sass: 'src/main/sass'
+      sassLib: '<%= opt.sass %>/lib'
 
       outBase: 'src/main/webapp'
       jsMainOut: 'src/main/webapp/scripts'
