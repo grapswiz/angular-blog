@@ -35,15 +35,18 @@ module.exports = (grunt) ->
         src: ['<%= opt.tsTest %>/IgniteSpec.ts']
         out: '<%= opt.jsTestOut %>/app_spec.js'
 
-    sass:
+    compass:
       dev:
         options:
-          loadPath: '<%= opt.sassLib %>'
-          noCache: true
+          sassDir: '<%= opt.sass %>'
+          cssDir: '<%= opt.cssOut %>'
+          imagesDir: '<%= opt.imageOut %>'
+          javascriptsDir: '<%= opt.jsMainOut %>'
+          importPath: '<%= opt.sassLib %>'
+          config: 'config.rb'
+          noLineComments: false
           debugInfo: true
-          style: 'expanded'
-        files:
-          '<%= opt.cssOut %>/style.css': '<%= opt.sass %>/*.scss'
+          relativeAssets: true
 
     clean:
       css:
@@ -117,7 +120,8 @@ module.exports = (grunt) ->
         files:
           src: ['src/test/typescript/*.ts']
 
-  grunt.registerTask 'compile', ['clean:css', 'clean:clientScript', 'ts:main', 'sass:dev']
+  grunt.registerTask 'setup', ['copy:bower']
+  grunt.registerTask 'compile', ['clean:css', 'clean:clientScript', 'ts:main', 'compass:dev']
   grunt.registerTask 'default', ['tslint:main', 'compile']
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)

@@ -1,8 +1,12 @@
 .idea
 node_modules
 tscommand.tmp.txt
+bower_components
+bower-task
+.sass-cache
 
 // generated
 src/main/webapp/css
 src/main/webapp/images
 src/main/webapp/scripts
+src/main/sass/lib
