@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'json'
 
-set :public_folder, File.dirname(__FILE__) + '/'
+set :public_folder, 'src/main/webapp/'
 
 get '/blog/entries' do
   content_type :json
