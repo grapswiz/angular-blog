@@ -77,6 +77,26 @@ module.exports = (grunt) ->
         ]
         dest: '<%= opt.jsMainOut %>/app.js'
 
+    copy:
+      bower:
+        files: [
+          expand: true
+          flatten: false
+          cwd: 'bower-task'
+          src: 'main-sass/gumby/**'
+          dest: '<%= opt.sassLib %>'
+        ]
+
+    bower:
+      install:
+        options:
+          targetDir: 'bower-task'
+          layout: 'byType' # exportsOverride の左辺に従って分類
+          install: true
+          verbose: true # ログの詳細を出すかどうか
+          cleanTargetDir: true
+          cleanBowerDir: false
+
     karma:
       unit:
         options:
